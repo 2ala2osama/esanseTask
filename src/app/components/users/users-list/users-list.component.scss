@@ -1,0 +1,61 @@
+@import "./../../../../assets/styles/app.scss";
+.users {
+  &-header {
+    background-color: #eff5fb;
+    padding: 5px;
+    &__button {
+      svg {
+        color: $blue;
+        width: 25px;
+        height: 25px;
+      }
+    }
+    &__input {
+      padding: 5px;
+      margin-inline-start: 15px;
+      border: 1px solid $gray-100;
+      font-family: $font;
+    }
+  }
+  &-table {
+    background-color: $white;
+    padding: 10px;
+    &-row {
+      border: 1px solid $gray-100;
+      color: $black;
+      padding: 6px;
+      &:not(:last-of-type) {
+        margin-block-end: 8px;
+      }
+    }
+    &-actions {
+      &__edit,
+      &__delete {
+        padding: 2px 10px;
+        svg {
+          margin: 0 4px;
+        }
+      }
+      &__edit {
+        border-right: 2px solid $gray-100;
+        color: $blue;
+        svg {
+          color: $blue;
+        }
+      }
+      &__delete {
+        color: red;
+      }
+    }
+  }
+}
+
+@include sm-screen {
+  .users {
+    &-header {
+      &__input {
+        margin-inline-start: unset;
+      }
+    }
+  }
+}

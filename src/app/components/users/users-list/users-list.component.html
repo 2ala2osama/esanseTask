@@ -1,0 +1,60 @@
+<div class="users">
+  <div class="users-header d-flex d-flex-justify--start d-flex-align--center">
+    <button (click)="openDialog()" class="users-header__button d-flex d-flex-justify--start d-flex-align--center">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M8.66675 3.33317C8.66675 2.96498 8.36827 2.6665 8.00008 2.6665C7.63189 2.6665 7.33342 2.96498 7.33342 3.33317V7.33317H3.33341C2.96522 7.33317 2.66675 7.63165 2.66675 7.99984C2.66675 8.36803 2.96522 8.6665 3.33341 8.6665H7.33342V12.6665C7.33342 13.0347 7.63189 13.3332 8.00008 13.3332C8.36827 13.3332 8.66675 13.0347 8.66675 12.6665V8.6665H12.6667C13.0349 8.6665 13.3334 8.36803 13.3334 7.99984C13.3334 7.63165 13.0349 7.33317 12.6667 7.33317H8.66675V3.33317Z"
+          fill="currentColor" />
+      </svg>
+      <span> إضافة </span>
+    </button>
+    <input class="users-header__input" type="text" (keyup)="filterUsers()" [(ngModel)]="searchQuery"
+      placeholder="ابحث عن الاسم" />
+  </div>
+
+  <div class="users-table d-flex d-flex--column d-flex-align--start d-flex-justify--center">
+    <div *ngFor="let user of filteredUsers"
+      class="users-table-row d-flex d-flex-align--center d-flex-justify--between w--100">
+      <div class="users-table__name" class="d-flex d-flex-align--center d-flex-justify--start">
+        {{ user.name }}
+      </div>
+      <div class="user-table-actions d-flex d-flex-align--center d-flex-justify--end">
+        <button (click)="openDialog(user)"
+          class="users-table-actions__edit d-flex d-flex-align--center d-flex-justify--start">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M8.92081 1.33754C9.14862 1.10974 9.51797 1.10974 9.74577 1.33754L12.6624 4.25421C12.8902 4.48201 12.8902 4.85136 12.6624 5.07917L5.0791 12.6625C4.96971 12.7719 4.82134 12.8334 4.66663 12.8334H1.74996C1.42779 12.8334 1.16663 12.5722 1.16663 12.25V9.33335C1.16663 9.17864 1.22808 9.03027 1.33748 8.92087L8.92081 1.33754ZM2.33329 9.57498V11.6667H4.425L11.425 4.66669L9.33329 2.57498L2.33329 9.57498Z"
+              fill="currentColor" />
+          </svg>
+          <span>تعديل</span>
+        </button>
+        <button (click)="deleteUserById(user.id)"
+          class="users-table-actions__delete d-flex d-flex-align--center d-flex-justify--start">
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M0.166626 3.5C0.166626 3.17784 0.427793 2.91667 0.749959 2.91667H11.25C11.5721 2.91667 11.8333 3.17784 11.8333 3.5C11.8333 3.82217 11.5721 4.08334 11.25 4.08334H0.749959C0.427793 4.08334 0.166626 3.82217 0.166626 3.5Z"
+              fill="#E52D42" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M4.83329 1.75C4.67858 1.75 4.53021 1.81146 4.42081 1.92086C4.31142 2.03025 4.24996 2.17863 4.24996 2.33334V2.91667H7.74996V2.33334C7.74996 2.17863 7.6885 2.03025 7.5791 1.92086C7.46971 1.81146 7.32134 1.75 7.16663 1.75H4.83329ZM8.91663 2.91667V2.33334C8.91663 1.86921 8.73225 1.42409 8.40406 1.0959C8.07587 0.76771 7.63075 0.583336 7.16663 0.583336H4.83329C4.36916 0.583336 3.92404 0.76771 3.59586 1.0959C3.26767 1.42409 3.08329 1.86921 3.08329 2.33334V2.91667H1.91663C1.59446 2.91667 1.33329 3.17784 1.33329 3.5V11.6667C1.33329 12.1308 1.51767 12.5759 1.84586 12.9041C2.17404 13.2323 2.61916 13.4167 3.08329 13.4167H8.91663C9.38076 13.4167 9.82587 13.2323 10.1541 12.9041C10.4823 12.5759 10.6666 12.1308 10.6666 11.6667V3.5C10.6666 3.17784 10.4055 2.91667 10.0833 2.91667H8.91663ZM2.49996 4.08334V11.6667C2.49996 11.8214 2.56142 11.9698 2.67081 12.0791C2.78021 12.1885 2.92858 12.25 3.08329 12.25H8.91663C9.07133 12.25 9.21971 12.1885 9.3291 12.0791C9.4385 11.9698 9.49996 11.8214 9.49996 11.6667V4.08334H2.49996Z"
+              fill="#E52D42" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M4.83329 5.83334C5.15546 5.83334 5.41663 6.0945 5.41663 6.41667V9.91667C5.41663 10.2388 5.15546 10.5 4.83329 10.5C4.51113 10.5 4.24996 10.2388 4.24996 9.91667V6.41667C4.24996 6.0945 4.51113 5.83334 4.83329 5.83334Z"
+              fill="#E52D42" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M7.16663 5.83334C7.48879 5.83334 7.74996 6.0945 7.74996 6.41667V9.91667C7.74996 10.2388 7.48879 10.5 7.16663 10.5C6.84446 10.5 6.58329 10.2388 6.58329 9.91667V6.41667C6.58329 6.0945 6.84446 5.83334 7.16663 5.83334Z"
+              fill="#E52D42" />
+          </svg>
+          <span>حذف</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- CONFIRMATION DIALOG FOR DELETE USER-->
+<app-confirmation-dialog *ngIf="isConfirmationDialogVisible" [message]="'هل أنت متأكد أنك تريد الحذف؟'"
+  (confirmed)="confirmDelete()" (canceled)="isConfirmationDialogVisible = false">
+</app-confirmation-dialog>
+
+ <!-- ADD & EDIT USER DIALOG-->
+<app-user-dialog [user]="selectedUser" (saveUser)="onSaveUser($event)" [editMode]="editMode" *ngIf="isDialogOpen"
+  (close)="closeDialog()"></app-user-dialog>

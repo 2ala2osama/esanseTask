@@ -1,0 +1,24 @@
+@import './../../../assets/styles/variables';
+
+.navbar {
+  background-color: $primary;
+  overflow: hidden;
+
+  a {
+    display: block;
+    color: $gray-100;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $gray-100;
+      color: $black;
+    }
+    &.active {
+        background: linear-gradient(to top,rgb(44, 43, 43), black);
+        border-bottom: 4px solid $white;
+        color: $white;
+    }
+  }
+}

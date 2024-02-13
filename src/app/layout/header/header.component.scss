@@ -1,0 +1,47 @@
+@import "./../../../assets/styles/app.scss";
+.header {
+  background-color: $black-100;
+  color: $white;
+  padding: 5px 0;
+  text-align: right;
+
+  &__buttons {
+    font-family: $font;
+    background-color: $primary;
+    color: $gray-100;
+    padding: 5px 10px;
+    font-size: 14px;
+    min-height: 30px;
+
+    &--toggleSidebar {
+      cursor: pointer;
+      margin-inline-end: 4px;
+    }
+  }
+  &-user {
+    padding-inline: 10px;
+    font-size: 16px;
+    color: $gray-100;
+    &-img {
+      img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+}
+
+@include sm-screen {
+  .header {
+    &-user {
+      font-size: 14px;
+
+      &-img {
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}

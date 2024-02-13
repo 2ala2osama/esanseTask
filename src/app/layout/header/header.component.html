@@ -1,0 +1,26 @@
+<div class="header d-flex d-flex-justify--between d-flex-align--center">
+  <div class="d-flex d-flex-align--center">
+    <button
+      class="header__buttons header__buttons--toggleSidebar d-flex d-flex-justify--start d-flex-align--center"
+      *ngIf="isMobileView"
+      (click)="toggleSidebar()"
+    >
+      <img
+        src="assets/images/sidebar.png"
+        width="30"
+        height="18"
+        alt="sidebar"
+      />
+    </button>
+
+    <button class="header__buttons">السجلات</button>
+  </div>
+  <div class="header-user d-flex d-flex-justify--end d-flex-align--center">
+    <div class="header-user-name">
+      <span>شريف محمد</span>
+    </div>
+    <div class="header-user-img">
+      <img src="./../../../assets/images/user.png" alt="" />
+    </div>
+  </div>
+</div>

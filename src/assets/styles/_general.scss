@@ -1,0 +1,39 @@
+.d-flex {
+  display: flex;
+  &-justify {
+    &--center {
+      justify-content: center;
+    }
+    &--end {
+      justify-content: end;
+    }
+    &--start {
+      justify-content: start;
+    }
+    &--between {
+      justify-content: space-between;
+    }
+  }
+  &-align {
+    &--center {
+      align-items: center;
+    }
+    &--end {
+      align-items: end;
+    }
+    &--start {
+      align-items: start;
+    }
+  }
+  &--column{
+    flex-direction: column;
+  }
+}
+.required{
+  color: red;
+}
+.w{
+  &--100{
+    width: 100%;
+  }
+}

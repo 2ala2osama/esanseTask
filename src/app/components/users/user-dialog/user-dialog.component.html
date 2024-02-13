@@ -1,0 +1,35 @@
+<div class="dialog">
+    <div class="dialog-container">
+        <div class="dialog-header d-flex d-flex-justify--between d-flex-align--center">
+            <h2 class="dialog-header_title">
+                {{ editMode ? "تعديل على الاسم" : "إضافة الاسم" }}
+            </h2>
+
+            <span class="dialog-header_close" (click)="closeDialog()">&times;</span>
+        </div>
+        <div class="dialog-content">
+            <form [formGroup]="userForm">
+                <div class="dialog-content-form d-flex d-flex--column d-flex-justify--center d-flex-align--start">
+                    <label class="dialog-content-form__label">الاسم<span class="required">*</span></label>
+                    <input type="text" formControlName="name" class="dialog-content-form__input"
+                        placeholder="أكتب الاسم" />
+                    <div *ngIf="isSubmit && userForm.get('name')?.invalid" class="error-message">
+                        الاسم مطلوب.
+                    </div>
+                </div>
+                <div class="dialog-content-form d-flex d-flex--column d-flex-justify--start d-flex-align--start">
+                    <label class="dialog-content-form__label">التفاصيل</label>
+                    <input type="text" formControlName="description" class="dialog-content-form__input"
+                        placeholder=" التفاصيل" />
+                </div>
+            </form>
+        </div>
+        <div class="dialog-footer d-flex d-flex-justify--center d-flex-align--center">
+            <button class="dialog-footer__submit" type="submit" (click)="onSubmit()">
+                حفظ
+            </button>
+            <button class="dialog-footer__close" (click)="closeDialog()">
+                إلغاء </button>
+        </div>
+    </div>
+</div>
