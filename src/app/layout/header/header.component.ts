@@ -15,7 +15,6 @@ import {
 })
 export class HeaderComponent {
   @Output() toggleSidebarEvent = new EventEmitter<void>();
-
   isMobileView: boolean = true;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {

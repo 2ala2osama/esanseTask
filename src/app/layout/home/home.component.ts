@@ -8,7 +8,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 })
 export class HomeComponent {
   @ViewChild('sidebar') sidebar!: SidebarComponent;
-  isSidebarOpen: boolean = true;
+  isSidebarOpen: boolean = false;
 
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;

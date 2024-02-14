@@ -1,4 +1,4 @@
-@import './../../../assets/styles/variables';
+@import "./../../../assets/styles/app.scss";
 
 .navbar {
   background-color: $primary;
@@ -10,15 +10,17 @@
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
-
+    @include sm-screen {
+      padding: 2px 12px;
+    }
     &:hover {
       background-color: $gray-100;
       color: $black;
     }
     &.active {
-        background: linear-gradient(to top,rgb(44, 43, 43), black);
-        border-bottom: 4px solid $white;
-        color: $white;
+      background: linear-gradient(to top, rgb(44, 43, 43), black);
+      border-bottom: 4px solid $white;
+      color: $white;
     }
   }
 }

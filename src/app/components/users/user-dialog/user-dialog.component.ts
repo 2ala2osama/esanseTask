@@ -25,7 +25,7 @@ export class UserDialogComponent implements OnChanges {
     this.userForm = this.formBuilder.group({
       id: [0],
       name: ['', Validators.required],
-      description: ['', Validators.required],
+      description: [''],
     });
   }
   ngOnChanges(changes: SimpleChanges) {

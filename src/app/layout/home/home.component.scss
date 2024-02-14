@@ -3,21 +3,19 @@
 .row {
   &-sidebar {
     width: 15%;
+    @include sm-screen {
+      width: 25% !important;
+    }
   }
   &-pages {
     width: 85%;
   }
-  &:has(.hidden-sidebar){
+  &:has(.hidden-sidebar) {
     .row-pages {
       width: 100%;
     }
   }
   .hidden-sidebar {
     display: none;
-  }
-}
-@include sm-screen {
-  .row-sidebar {
-    width: 25% !important;
   }
 }

@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
-  isSidebarOpen: boolean = true;
+  isSidebarOpen: boolean = false;
 
   toggleSidebar(isOpen: boolean) {
     this.isSidebarOpen = isOpen;

@@ -33,6 +33,10 @@
     background-color: $gray-100;
     padding: 10px;
     width: 35vw;
+    @include sm-screen{
+      width: 100%;
+
+    }
     &-form {
       font-family: $font;
 
@@ -74,10 +78,3 @@
   }
 }
 
-@include sm-screen {
-  .dialog {
-    &-content {
-      width: 100%;
-    }
-  }
-}

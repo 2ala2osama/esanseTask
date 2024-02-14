@@ -15,6 +15,9 @@
       margin-inline-start: 15px;
       border: 1px solid $gray-100;
       font-family: $font;
+      @include sm-screen {
+        margin-inline-start: unset;
+      }
     }
   }
   &-table {
@@ -50,12 +53,3 @@
   }
 }
 
-@include sm-screen {
-  .users {
-    &-header {
-      &__input {
-        margin-inline-start: unset;
-      }
-    }
-  }
-}
